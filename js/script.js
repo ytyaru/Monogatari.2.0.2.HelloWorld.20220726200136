@@ -108,6 +108,7 @@ monogatari.script ({
 			'Input': {
 				//'Text': 'What is your name?',
 				'Text': 'あなたの名前は？',
+                                'Default': '山田太郎',
 				'Validation': function (input) {
 					return input.trim ().length > 0;
 				},
