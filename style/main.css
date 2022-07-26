@@ -16,12 +16,13 @@
  * General Styling
  * ===========================
 **/
-
+:root {
+    --line-of-chars:40;
+}
 /* General Style */
 body {
-
+    font-size: calc(100vw / (var(--line-of-chars)));
 }
-
 /* Simple Button styles*/
 button {
 

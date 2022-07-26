@@ -130,7 +130,8 @@ monogatari.script ({
 			}
 		},
 //		'y Hi {{player.name}} Welcome to Monogatari!',
-                'show character y normal at center with lightSpeedInLeft',
+                //'show character y normal at center with lightSpeedInLeft',
+                'show character y normal at right with lightSpeedInRight',
                 'show character k normal at left with fadeIn',
 		'y こんにちは{{player.name}}さん<br>ようこそ Monogatari へ！',
 		{
@@ -168,7 +169,7 @@ monogatari.script ({
 		//'y Go ahead and create an amazing Game!',
 		'y さあ、素晴らしいゲームを作りましょう！',
 		//'y I can’t wait to see what story you’ll tell!',
-		'y あなたがどんな物語を紡ぐのか楽しみにしてますね！',
+		'y あなたがどんな物語を紡ぐのか楽しみにしてるわよ！',
 		'k え、俺の出番なし？<br>これで終わり？<br>マジか……',
 		'end'
 	]
