@@ -19,9 +19,13 @@ monogatari.action ('message').messages ({
 // Define the notifications used in the game
 monogatari.action ('notification').notifications ({
 	'Welcome': {
-		title: 'Welcome',
-		body: 'This is the Monogatari VN Engine',
-		icon: ''
+		//title: 'Welcome',
+		//body: 'This is the Monogatari VN Engine',
+		//icon: ''
+		title: 'ようこそ',
+		body: 'これはMonogatariで作成したテストゲームです',
+		//body: '<a href="https://github.com/Monogatari/Monogatari">Monogatari Visual Novel Engine</a>です',
+		icon: './assets/icons/icon_48x48.png'
 	}
 });
 
@@ -37,7 +41,16 @@ monogatari.action ('canvas').objects ({
 
 // Credits of the people involved in the creation of this awesome game
 monogatari.configuration ('credits', {
-
+    "開発者": {
+        //"開発者": "ytyaru",
+        "開発者": `<a href="https://ytyaru.github.io/" target="_blank" rel="noopener noreferrer">ytyaru</a><mpurse-send-button></mpurse-send-button>`,
+        //"開発者": `<a href="https://ytyaru.github.io/">ytyaru</a><a href="javascript:/*await*/ window.mpurse.sendAsset('MEHCqJbgiNERCH3bRAtNSSD9uxPViEX1nu', 'MONA', 0.114114, 'plain', 'Good job!')" title="投げモナする"><object data="./assets/monacoin/svg/coin-monar.svg" type="image/svg+xml" width="64" height="64"><object data="./assets/monacoin/png/64/coin-monar.png" type="image/png" width="64" height="64"></object></object></a>`,
+    },
+    "フリー素材": {
+        "音楽": `<a href="http://ontama-m.com/ongaku_piano1.html" target="_blank" rel="noopener noreferrer">音楽の卵</a>`,
+        "背景画像": `<a href="http://www.aj.undo.jp/material/bg/bg_material.html" target="_blank" rel="noopener noreferrer">（ｃ）安野譲</a>`,
+        "立ち絵": `<a href="https://wataokiba.net/" target="_blank" rel="noopener noreferrer">わたおきば</a>`,
+    }
 });
 
 
@@ -89,7 +102,7 @@ monogatari.characters ({
 	},
         'k': {
             name: 'キヨタカ',
-            color: 'ffca5b',
+            color: '#ffca5b',
             directory: 'kiyotaka',
             sprites: {
                 'normal': 'dansei01-167x300.png', // https://wataokiba.net/%e7%b4%a0%e6%9d%90%e4%b8%80%e8%a6%a7/
@@ -157,13 +170,14 @@ monogatari.script ({
 //		'y Then you are ready to go ahead and create an amazing Game!',
 //		'y I can’t wait to see what story you’ll tell!',
 		'k え、俺の出番なし？<br>これで終わり？<br>マジか……',
-		'end'
+//		'end'
+                'jump story-1',
 	],
 
 	'No': [
 
 		//'y You can do it now.',
-		'y あらのそうなの？<br>なら今すぐ読むといいわ',
+		'y あらそうなの？<br>なら今すぐ読むといいわ',
 
 		'show message Help',
 
@@ -172,6 +186,12 @@ monogatari.script ({
 		//'y I can’t wait to see what story you’ll tell!',
 		'y あなたがどんな物語を紡ぐのか楽しみにしてるわよ！',
 		'k え、俺の出番なし？<br>これで終わり？<br>マジか……',
-		'end'
-	]
+		//'end'
+                'jump story-1',
+	],
+
+        'story-1': [
+            'y いいえ？<br>続くから安心なさい',
+            'k よかった',
+        ],
 });

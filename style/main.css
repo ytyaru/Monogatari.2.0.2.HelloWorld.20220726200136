@@ -18,10 +18,23 @@
 **/
 :root {
     --line-of-chars:40;
+    --char-scale:3;
+}
+@media screen and (max-width: 959px) {/* 959px以下に適用されるCSS（タブレット用） */
+:root {
+    --line-of-chars:30;
+}
+}
+@media screen and (max-width: 480px) { /* 480px以下に適用されるCSS（スマホ用） */
+:root {
+    --line-of-chars:20;
+}
 }
 /* General Style */
 body {
+    /*
     font-size: calc(100vw / (var(--line-of-chars)));
+    */
 }
 /* Simple Button styles*/
 button {
@@ -88,32 +101,35 @@ button:hover {
 
 /* Choice Buttons style */
 [data-component="choice-container"] button {
-
+    font-size: calc(100vw / (var(--line-of-chars)));
 }
 
 /* Choice Button Style on Hover */
 [data-component="choice-container"] button:hover {
+    font-size: calc(100vw / (var(--line-of-chars)));
 
 }
 
 /* Text Box styling */
 [data-component="text-box"] {
-
+    font-size: calc(100vw / (var(--line-of-chars)));
 }
 
 /* Character Name Style */
 [data-ui="who"] {
-
+    font-size: calc(100vw / (var(--line-of-chars)));
 }
 
 /* Style for Centered Text */
 [data-component="centered-dialog"] {
-
+    font-size: calc(100vw / (var(--line-of-chars)));
 }
 
 /* Character Images Styles */
 [data-screen="game"] [data-character] {
-
+    /*
+    transform: scale(var(--char-scale), var(--char-scale));
+    */
 }
 
 /* Other Images Styles */
