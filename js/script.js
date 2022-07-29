@@ -43,13 +43,14 @@ monogatari.action ('canvas').objects ({
 monogatari.configuration ('credits', {
     "開発者": {
         //"開発者": "ytyaru",
-        "開発者": `<a href="https://ytyaru.github.io/" target="_blank" rel="noopener noreferrer">ytyaru</a><mpurse-send-button></mpurse-send-button>`,
+        "開発者": `<a href="https://ytyaru.github.io/" target="_blank" rel="noopener noreferrer">ytyaru</a><mpurse-send-button></mpurse-send-button><a href="https://ytyaru.github.io/Html.Mpurse.Api.20220517160403/setup.html" title="モナコインを使うには" target="_blank" rel="noopener noreferrer">？</a>`,
         //"開発者": `<a href="https://ytyaru.github.io/">ytyaru</a><a href="javascript:/*await*/ window.mpurse.sendAsset('MEHCqJbgiNERCH3bRAtNSSD9uxPViEX1nu', 'MONA', 0.114114, 'plain', 'Good job!')" title="投げモナする"><object data="./assets/monacoin/svg/coin-monar.svg" type="image/svg+xml" width="64" height="64"><object data="./assets/monacoin/png/64/coin-monar.png" type="image/png" width="64" height="64"></object></object></a>`,
     },
     "フリー素材": {
-        "音楽": `<a href="http://ontama-m.com/ongaku_piano1.html" target="_blank" rel="noopener noreferrer">音楽の卵</a>`,
-        "背景画像": `<a href="http://www.aj.undo.jp/material/bg/bg_material.html" target="_blank" rel="noopener noreferrer">（ｃ）安野譲</a>`,
+        "背景": `<a href="http://www.aj.undo.jp/material/bg/bg_material.html" target="_blank" rel="noopener noreferrer">（ｃ）安野譲</a>`,
         "立ち絵": `<a href="https://wataokiba.net/" target="_blank" rel="noopener noreferrer">わたおきば</a>`,
+        "音楽": `<a href="http://ontama-m.com/ongaku_piano1.html" target="_blank" rel="noopener noreferrer">音楽の卵</a>`,
+        "ボイス": `<a href="https://wingless-seraph.net/material-riyoukiyaku.html">ユーフルカ</a>`,
     }
 });
 
@@ -66,7 +67,8 @@ monogatari.assets ('music', {
 
 // Define the voice files used in the game.
 monogatari.assets ('voices', {
-
+    'やるじゃねぇか': 'kiyotaka/17_nekketsu_damage.ogg',
+    //'yarujyaneeka': 'kiyotaka/17_nekketsu_damage.ogg',
 });
 
 // Define the sounds used in the game.
@@ -165,7 +167,7 @@ monogatari.script ({
 
 	'Yes': [
 		'y でかしたわ！',
-		'y あなたがどんな素晴らしいゲームを作るか楽しみだわ！',
+		'y あなたがどんな素晴らしいゲームを作るか楽しみね！',
 //		'y Thats awesome!',
 //		'y Then you are ready to go ahead and create an amazing Game!',
 //		'y I can’t wait to see what story you’ll tell!',
@@ -192,11 +194,28 @@ monogatari.script ({
             'k え、俺の出番なし？<br>これで終わり？<br>マジか……',
             'y いいえ？<br>続くから安心なさい',
             'k よかった',
-            'y これは<a href="https://github.com/Monogatari/Monogatari">Monogatari</a><br>というツールで作成したの',
+            'y これは<a href="https://github.com/Monogatari/Monogatari" target="_blank" rel="noopener noreferrer">Monogatari</a><br>というツールで作成したの',
             'y HTML, CSS, JavaScriptで作成できるから好きにプログラムできるわよ',
             'k なんか難しそうだけどマスターしたら最強っぽい',
             'y そうよ<br>気に<ruby>食<rt>く</rt></ruby>わなければ自力で作ればいいのだわ',
             'k ま、それができないからツールを使ってるんだけどね',
+            'y とにかくこの<a href="https://github.com/Monogatari/Monogatari" target="_blank" rel="noopener noreferrer">Monogatari</a>を使ってゲームを作るのよ！',
+            'k いきなり言われてもな<br>何もわからないし',
+            'y ひたすら<a href="file:///tmp/work/Monogatari.2.0.2.HelloWorld.20220726200136/documents/" target="_blank" rel="noopener noreferrer">ドキュメント</a>を読んで書いて動かして学びなさい！',
+            'k それしかなさそうだね<br>日本語の情報もまるでないし',
+            'y だから今、私がこうして手ほどきしてあげているでしょう？<br>感謝なさい',
+            'k ざっす',
+            'y ソースコードは<a href="https://github.com/ytyaru/Monogatari.2.0.2.HelloWorld.20220726200136" target="_blank" rel="noopener noreferrer">ココ</a>にあるわ<br>参考になさい',
+            'play voice やるじゃねぇか',
+            //'play voice yarujyaneeka',
+            'k やるじゃねぇか',
+            'y ちょっと、いきなり声ださないでよ',
+            'k とにかくやれっていったじゃん',
+            'y チッ',
+            'k 態度悪っ',
+            'y じゃ、あとはがんばって',
+            'k あ、はい',
+            'y おつかれさま',
             'end',
         ],
 });
