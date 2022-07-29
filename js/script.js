@@ -164,12 +164,11 @@ monogatari.script ({
 	],
 
 	'Yes': [
-		'y すばらしいわね！',
+		'y でかしたわ！',
 		'y あなたがどんな素晴らしいゲームを作るか楽しみだわ！',
 //		'y Thats awesome!',
 //		'y Then you are ready to go ahead and create an amazing Game!',
 //		'y I can’t wait to see what story you’ll tell!',
-		'k え、俺の出番なし？<br>これで終わり？<br>マジか……',
 //		'end'
                 'jump story-1',
 	],
@@ -185,13 +184,19 @@ monogatari.script ({
 		'y さあ、素晴らしいゲームを作りましょう！',
 		//'y I can’t wait to see what story you’ll tell!',
 		'y あなたがどんな物語を紡ぐのか楽しみにしてるわよ！',
-		'k え、俺の出番なし？<br>これで終わり？<br>マジか……',
 		//'end'
                 'jump story-1',
 	],
 
         'story-1': [
+            'k え、俺の出番なし？<br>これで終わり？<br>マジか……',
             'y いいえ？<br>続くから安心なさい',
             'k よかった',
+            'y これは<a href="https://github.com/Monogatari/Monogatari">Monogatari</a><br>というツールで作成したの',
+            'y HTML, CSS, JavaScriptで作成できるから好きにプログラムできるわよ',
+            'k なんか難しそうだけどマスターしたら最強っぽい',
+            'y そうよ<br>気に<ruby>食<rt>く</rt></ruby>わなければ自力で作ればいいのだわ',
+            'k ま、それができないからツールを使ってるんだけどね',
+            'end',
         ],
 });
