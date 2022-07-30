@@ -95,8 +95,8 @@ monogatari.assets ('scenes', {
 // Define the Characters
 monogatari.characters ({
 	'y': {
-		name: 'ユイ',
-		color: '#5bcaff',
+            name: 'ユイ',
+            color: '#ffca5b',
                 directory: 'yui',
                 sprites: {
                     'normal': 'josei06-167x300.png', // https://wataokiba.net/%e7%b4%a0%e6%9d%90%e4%b8%80%e8%a6%a7/
@@ -104,7 +104,7 @@ monogatari.characters ({
 	},
         'k': {
             name: 'キヨタカ',
-            color: '#ffca5b',
+            color: '#5bcaff',
             directory: 'kiyotaka',
             sprites: {
                 'normal': 'dansei01-167x300.png', // https://wataokiba.net/%e7%b4%a0%e6%9d%90%e4%b8%80%e8%a6%a7/
@@ -116,8 +116,8 @@ monogatari.script ({
 	// The game starts here.
 	'Start': [
                 'play music piano1_miagerusora with loop',
-		'show scene #f7f6f6 with fadeIn',
-                'show scene room-night',
+		//'show scene #f7f6f6 with fadeIn',
+                'show scene room-night with fadeIn',
 		'show notification Welcome',
 		{
 			'Input': {
@@ -147,8 +147,9 @@ monogatari.script ({
 		},
 //		'y Hi {{player.name}} Welcome to Monogatari!',
                 //'show character y normal at center with lightSpeedInLeft',
-                'show character y normal at right with lightSpeedInRight',
-                'show character k normal at left with fadeIn',
+                //'show character y normal at right with lightSpeedInRight',
+                'show character y normal at center with lightSpeedInRight',
+                //'show character k normal at left with fadeIn',
 		'y こんにちは{{player.name}}さん<br>ようこそ Monogatari へ！',
 		{
 			'Choice': {
@@ -176,12 +177,9 @@ monogatari.script ({
 	],
 
 	'No': [
-
 		//'y You can do it now.',
 		'y あらそうなの？<br>なら今すぐ読むといいわ',
-
 		'show message Help',
-
 		//'y Go ahead and create an amazing Game!',
 		'y さあ、素晴らしいゲームを作りましょう！',
 		//'y I can’t wait to see what story you’ll tell!',
@@ -191,9 +189,10 @@ monogatari.script ({
 	],
 
         'story-1': [
+            'show character k normal at left with fadeIn',
             'k え、俺の出番なし？<br>これで終わり？<br>マジか……',
-            'y いいえ？<br>続くから安心なさい',
-            'k よかった',
+            'y 急に湧いてこないで<br>続くから安心なさい',
+            'k よかった<br>もっとはやく呼んでほしかったけど',
             'y これは<a href="https://github.com/Monogatari/Monogatari" target="_blank" rel="noopener noreferrer">Monogatari</a><br>というツールで作成したの',
             'y HTML, CSS, JavaScriptで作成できるから好きにプログラムできるわよ',
             'k なんか難しそうだけどマスターしたら最強っぽい',
@@ -210,12 +209,42 @@ monogatari.script ({
             //'play voice yarujyaneeka',
             'k やるじゃねぇか',
             'y ちょっと、いきなり声ださないでよ',
-            'k とにかくやれっていったじゃん',
+            'k とにかくやれって言ったじゃん',
             'y チッ',
             'k 態度悪っ',
             'y じゃ、あとはがんばって',
-            'k あ、はい',
-            'y おつかれさま',
+            'k え、嘘だろ？',
+            'y 仕方ないでしょう？<br>私だってよく知らないのだから',
+            'k じゃあ質問<br>なんか俺たち小さくね？',
+            'y 大きい画面でプレイしているのね<br>残念だけどキャラ画像は拡大されないみたい',
+            'k 背景は拡縮されるのに……<br>どうしたらいい？',
+            'y さあ？<br>とりあえずウインドウサイズを変えてみれば？',
+            'k 自動でいい感じにしてほしんだが？',
+            'y 甘えるのも大概になさい<br>私は疲れているのよ',
+            'k （どうすればいいかわからなんだな）',
+            'y ま、何かわかったら私に報告することね',
+            'k あと選択肢ってフォーカス当たってなくね？<br>キーボードで操作できなかったんだが',
+            'y TABキーを押せばフォーカスが当たったわよ',
+            'k 最初から当ててほしかったんだが',
+            'y 知らないわよ<br>ドキュメントにも書いてないし',
+            'k <a href="https://github.com/Monogatari/Monogatari/blob/develop/src/actions/Choice.js">ソースコード</a>を見てみたぞ<br>たぶんコードにfocus()するよう追記してビルドし直す必要があるのでは？',
+            'play voice やるじゃねぇか',
+            'y やるじゃねぇか',
+            'k それ俺のボイスなんだが',
+            'y 言ってみたかったんだもん',
+            'k せめて女性ボイスにしてほしかった',
+            'y これは動作確認用のテストゲームなんだから<br>贅沢いわないでちょうだい',
+            'k 素材はネットでダウンロードすればいいのかな？',
+            'y そうね',
+            'y 今回使わせてもらったものに関しては<br>クレジット画面で確認できるわよ',
+            'k クレジット画面って最初に出てきた真っ白な画面の？',
+            'y そう<br>その一番下にあるボタンよ',
+            'k これリンクになってるんだな<br>クリックしたらサイトが開いたぞ',
+            'y そういうこと<br>あとは利用規約を読んでありがたく使わせてもらえばいいのだわ',
+            'k なるほど<br>だいたいわかった',
+            'k じゃあ今日はこれでお開きかな？',
+            'y そうね<br>おつかれさま',
+            'show scene #fff with fadeIn duration 3s',
             'end',
         ],
 });
